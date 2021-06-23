@@ -31,7 +31,7 @@ scoop install smock
 If you are on another platform such as linux or just rather not use a package manager, you can download a binary from Github releases and use it straight away without having to install any additional dependencies.
 
 1) Find the latest release, download the tar.gz file for your given operating system and extract it.
-2) Inside you'll find the `smock` executable which you can run directly (Note: you may need to allow execution via `chmod +x <PATH_TO_SMOCK_EXE>`),
+2) Inside you'll find the `smock` executable which you can run directly (Note: you may need to allow execution via `chmod +x <PATH_TO_SMOCK_EXE>`).
 
 ### Development
 
