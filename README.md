@@ -9,7 +9,7 @@
 [![GolangCI][golangci-lint-img]][golangci-lint]
 [![Go Report Card][report-card-img]][report-card]
 
-Instantly transform your screenshots to beautiful mockups
+Instantly transform your screenshots to beautiful mockups.
 
 ## Installation
 
