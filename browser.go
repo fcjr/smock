@@ -34,11 +34,13 @@ var headerColor = &color.RGBA{
 type BrowserOptions struct {
 	VerticalPadding   int
 	HorizontalPadding int
+	BackgroundColor   color.RGBA
 }
 
 var defaultBrowserOpts = &BrowserOptions{
 	VerticalPadding:   75,
 	HorizontalPadding: 100,
+	BackgroundColor:   color.RGBA{R: 255, G: 255, B: 255, A: 255},
 }
 
 func Browser(img image.Image, opts *BrowserOptions) (image.Image, error) {
@@ -50,7 +52,7 @@ func Browser(img image.Image, opts *BrowserOptions) (image.Image, error) {
 
 	dc := gg.NewContext(inBounds.Dx()+(opts.HorizontalPadding*2), inBounds.Dy()+(opts.VerticalPadding*2)+headerHeight)
 
-	dc.SetColor(color.White)
+	dc.SetColor(opts.BackgroundColor)
 	dc.Clear()
 
 	radiusMask := gg.NewContext(inBounds.Dx()+(opts.HorizontalPadding*2), inBounds.Dy()+(opts.VerticalPadding*2)+headerHeight)

@@ -32,8 +32,18 @@ var browserCmd = &cobra.Command{
 	Short: "Create a Chrome-esque mockups",
 	Args:  cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
-		verticalPadding, _ := cmd.Flags().GetInt("vertical")
-		horizontalPadding, _ := cmd.Flags().GetInt("horizontal")
+		verticalPadding, err := cmd.Flags().GetInt("vertical")
+		cobra.CheckErr(err)
+		horizontalPadding, err := cmd.Flags().GetInt("horizontal")
+		cobra.CheckErr(err)
+		bgColorStr, err := cmd.Flags().GetString("background-color")
+		cobra.CheckErr(err)
+		bgAlpha, err := cmd.Flags().GetUint8("background-alpha")
+		cobra.CheckErr(err)
+
+		backgroundColor, err := smock.ParseHexColor(bgColorStr)
+		cobra.CheckErr(err)
+		backgroundColor.A = bgAlpha
 
 		in, err := os.Open(args[0])
 		cobra.CheckErr(err)
@@ -47,6 +57,7 @@ var browserCmd = &cobra.Command{
 			&smock.BrowserOptions{
 				VerticalPadding:   verticalPadding,
 				HorizontalPadding: horizontalPadding,
+				BackgroundColor:   backgroundColor,
 			},
 		)
 		cobra.CheckErr(err)
@@ -65,4 +76,6 @@ func init() {
 
 	browserCmd.PersistentFlags().Int("vertical", 75, "vertical padding in px")
 	browserCmd.PersistentFlags().Int("horizontal", 100, "horizontal padding in px")
+	browserCmd.PersistentFlags().String("background-color", "FFFFFF", "background color in hex")
+	browserCmd.PersistentFlags().Uint8("background-alpha", 255, "background alpha")
 }
