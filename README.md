@@ -1,3 +1,8 @@
+
+<p align="center">
+<img src="logo.svg" alt="Smock Logo">
+</p>
+
 # Smock
 
 [![GitHub release (latest by date)][release-img]][release]
