@@ -1,0 +1,77 @@
+project_name: smock
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - id: smock
+    main: ./cli/main.go
+    ldflags:
+      - -s -w -X github.com/fcjr/smock/cli/version/version.Version={{ .Version }}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+archives:
+  - replacements:
+      darwin: macOS
+      linux: linux
+      windows: windows
+      386: i386
+      amd64: x86_64
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+nfpms:
+  - builds:
+      - smock
+    vendor: Left Shift Logical, LLC.
+    homepage: https://www.leftshift.com
+    maintainer: Left Shift Logical, LLC. <support@leftshift.com>
+    description: Smock Image Editor
+    formats:
+      - deb
+      - rpm
+      - apk
+brews:
+  - tap:
+      owner: fcjr
+      name: homebrew-fcjr
+    commit_author:
+      name: leftshift-bot
+      email: support@leftshift.com
+    homepage: https://www.leftshift.com
+    description: Smock Image Editor
+    install: |
+      bin.install "smock"
+scoop:
+  bucket:
+    owner: fcjr
+    name: scoop-fcjr
+  commit_author:
+    name: leftshift-bot
+    email: support@leftshift.com
+  homepage: https://www.leftshift.com
+  description: Smock Image Editor
+# snapcrafts:
+#   -
+#     name: smock
+#     publish: true
+#     summary: Smock Image Editor
+#     description: |
+#       Instantly transform your screenshots to beautiful mockups
+#     grade: stable
+#     confinement: strict
+#     license: GPL-3.0
+#     base: core20
+#     apps:
+#       smock:
+#         plugs: ["home"]
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
