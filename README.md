@@ -7,7 +7,6 @@
 
 [![GitHub release (latest by date)][release-img]][release]
 [![GolangCI][golangci-lint-img]][golangci-lint]
-[![Go Report Card][report-card-img]][report-card]
 
 Instantly transform your screenshots to beautiful mockups.
 
@@ -47,5 +46,3 @@ This project uses [goreleaser](https://github.com/goreleaser/goreleaser/).
 [release]: https://github.com/fcjr/smock/releases
 [golangci-lint-img]: https://github.com/fcjr/smock/workflows/go-lint/badge.svg
 [golangci-lint]: https://github.com/fcjr/smock/actions?query=workflow%3Ago-lint
-[report-card-img]: https://goreportcard.com/badge/github.com/fcjr/smock
-[report-card]: https://goreportcard.com/report/github.com/fcjr/smock
