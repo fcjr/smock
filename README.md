@@ -11,24 +11,6 @@
 
 Instantly transform your screenshots to beautiful mockups.
 
-## Available Commands
-
-### Browser
-
-Create browser-like mockups
-<p align="center">
-<img src="img/browser.png" alt="Browser Command Example">
-</p>
-
-#### Usage
-Basic:
-
-`smock browser in.png out.png`
-
-Custom:
-
-`smock browser --background-color FFFFFF --background-alpha 255 --horizontal-padding 100 --vertical-padding 75`
-
 ## Installation
 
 ### macOS
@@ -50,6 +32,24 @@ If you are on another platform such as linux or just rather not use a package ma
 
 1) Find the latest release, download the tar.gz file for your given operating system and extract it.
 2) Inside you'll find the `smock` executable which you can run directly (Note: you may need to allow execution via `chmod +x <PATH_TO_SMOCK_EXE>`).
+
+## Available Commands
+
+### Browser
+
+Create browser-like mockups
+<p align="center">
+<img src="img/browser.png" alt="Browser Command Example">
+</p>
+
+#### Usage
+Basic:
+
+`smock browser in.png out.png`
+
+Custom:
+
+`smock browser --background-color FFFFFF --background-alpha 255 --horizontal-padding 100 --vertical-padding 75`
 
 ### Development
 
