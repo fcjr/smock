@@ -1,6 +1,6 @@
 
 <p align="center">
-<img src="logo.svg" alt="Smock Logo">
+<img src="img/logo.svg" alt="Smock Logo">
 </p>
 
 # Smock
@@ -10,6 +10,24 @@
 [![Go Report Card][report-card-img]][report-card]
 
 Instantly transform your screenshots to beautiful mockups.
+
+## Available Commands
+
+### Browser
+
+Create browser-like mockups
+<p align="center">
+<img src="img/browser.png" alt="Browser Command Example">
+</p>
+
+#### Usage
+Basic:
+
+`smock browser in.png out.png`
+
+Custom:
+
+`smock browser --background-color FFFFFF --background-alpha 255 --horizontal-padding 100 --vertical-padding 75`
 
 ## Installation
 
