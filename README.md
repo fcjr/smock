@@ -26,6 +26,10 @@ scoop bucket add fcjr https://github.com/fcjr/scoop-fcjr.git
 scoop install smock
 ```
 
+### Linux
+
+- The [Arch User Repository (AUR)](https://wiki.archlinux.org/title/Arch_User_Repository): yay -S smock
+
 ### Other
 
 If you are on another platform such as linux or just rather not use a package manager, you can download a binary from Github releases and use it straight away without having to install any additional dependencies.
